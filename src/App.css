@@ -1,0 +1,30 @@
+.logo{
+    height: 7rem;
+    background-color: transparent;
+    border: transparent;
+    z-index: 1;
+}
+
+.navbar{
+    background-color: #000 !important;
+}
+
+.nav-link{
+    color: #fafafa !important;
+}
+
+.navbar-toggler-icon{
+    filter: invert(1);
+}
+
+.icon,.numberCart{
+    cursor: pointer;
+    color: #fafafa;
+    margin-right: .5rem;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 1.7rem;
+    padding: 2rem;
+}
