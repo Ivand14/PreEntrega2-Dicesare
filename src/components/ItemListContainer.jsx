@@ -1,12 +1,23 @@
 import React from 'react'
+import ItemList from './ItemList'
+import data from '../data.json'
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
 
+  const productos=()=>{
+    return new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve(data)
+        reject(new Error('No se encontraron los productos'))
+      },2000)
+    })
+  }
+
+  
 
   return (
     <>
-    <h1 className='titulo'>{greeting}</h1>
-    
+    <ItemList productos={productos(data)}/>
     </>
   )
 }

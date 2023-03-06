@@ -6,7 +6,7 @@
 }
 
 .navbar{
-    background-color: #000 !important;
+    background-color: #000000;
 }
 
 .nav-link{
@@ -28,3 +28,45 @@
     font-size: 1.7rem;
     padding: 2rem;
 }
+
+.contenedor-contador{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: .2rem;
+}
+
+.botonMas ,.botonMenos{
+    border: 0.2rem solid thistle;
+    border-radius: 100%;
+    height: 2rem;
+}
+
+.contador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    border: .1rem solid black;
+    border-radius: 2rem
+}
+
+.agregar{
+    border: solid .1rem #274b7a;
+    border-radius: 1rem;
+    padding: 0 2rem;
+    background: linear-gradient(to left,transparent 50%, rgb(39, 75, 122) 50%);
+    background-size: 201%;
+    background-position: right;
+    transition: ease .6s;
+}
+
+
+.agregar:hover{
+    background-position: left;
+    color: #fafafa;
+}
+
+
+
+

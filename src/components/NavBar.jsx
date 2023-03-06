@@ -63,6 +63,9 @@ const NavBar = () => {
     <CartWidget/>
       </Container>
      </Navbar>
+
+    
+  
     </>
   )
 }

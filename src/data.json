@@ -1,0 +1,7 @@
+[
+    {"id":"01","img":"../public/img/2008251053327122_01_medium.jpg","name":"Guitarra Stratocaster","description":"electrica","stock":5,"catgoria":"guitarras","precio":"150.000$"},
+    {"id":"02","img":"../public/img/12541_medium.jpg","name":"Piano Yamaha","description":"electrico","stock":2,"catgoria":"pianos","precio":"350.000$"},
+    {"id":"03","img":"../public/img/18418_medium.jpg","name":"Bajo Fender","description":"electrico","stock":2,"catgoria":"bajos","precio":"120.000$"},
+    {"id":"04","img":"../public/img/1707261614404446_01_medium.jpg","name":"Bateria Acustica","description":"convencional","stock":1,"catgoria":"baterias","precio":"300.000$"},
+    {"id":"05","img":"../public/img/20367_medium.jpg","name":"lidsin","description":"Microfono Inalambrico","stock":9,"catgoria":"microfonos","precio":"90.000$"}
+]
