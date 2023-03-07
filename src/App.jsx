@@ -11,12 +11,12 @@ const App = () => {
 
 
   return (
-    <>
+    <div className='container-cards'>
     <ChakraProvider>
     <NavBar/>
     <ItemListContainer greeting={'BIENVENIDO A ROXYAM TIENDA DE INSTRUMENTOS MUSICALES'}/>
     </ChakraProvider>
-    </>
+    </div>
   )
 }
 

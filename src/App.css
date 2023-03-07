@@ -67,6 +67,35 @@
     color: #fafafa;
 }
 
+.contenedor-cards{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 100vw;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.boton{
+    background:linear-gradient(to left,transparent 50%, #274b7a 50%) !important;
+    background-position:right !important;
+    background-size: 201% !important;
+    transition: ease-in-out .6s !important;
+    color: #274b7a !important;
+    border: solid .1rem #274b7a !important;
+}
+
+.boton:hover{
+    background-position: left !important;
+    color: #000000 !important;
+}
 
 
 

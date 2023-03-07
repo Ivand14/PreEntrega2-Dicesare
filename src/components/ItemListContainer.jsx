@@ -4,21 +4,33 @@ import data from '../data.json'
 
 const ItemListContainer = () => {
 
-  const productos=()=>{
+  const getDatos=()=>{
     return new Promise((resolve, reject) => {
-      setTimeout(()=>{
+      if (data.length<0){
+        reject(new Error('No pudimos encontrar productos'))
+      }
+
+      setTimeout(() => {
         resolve(data)
-        reject(new Error('No se encontraron los productos'))
-      },2000)
+      }, 2500);
     })
   }
 
-  
+  async function fetchingData(){
+    try{
+      const datos= await getDatos();
+    }catch(err){
+      console.log('Error')
+    }
+  }
 
+  fetchingData();
+  
+  console.log(data)
   return (
-    <>
-    <ItemList productos={productos(data)}/>
-    </>
+    <div className='contenedor-cards'>
+    <ItemList productos={data}/>
+    </div>
   )
 }
 
