@@ -1,1 +1,1 @@
-(/public/img/screen-capture.webm)
+! [Texto Alternativo](/public/img/screen-capture.webm)
