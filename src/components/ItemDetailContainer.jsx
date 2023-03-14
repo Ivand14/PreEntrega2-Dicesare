@@ -5,8 +5,6 @@ import data from '../data.json'
 
 const ItemDetailContainer = () => {
 
- 
-
   return (
     <div className='containerDetail'>
       <ItemDetail productos={data}/>

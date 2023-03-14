@@ -64,7 +64,7 @@
 
 .agregar:hover{
     background-position: left;
-    color: #fafafa;
+    color: hwb(0 98% 2%);
 }
 
 .contenedor-cards{

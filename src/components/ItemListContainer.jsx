@@ -7,13 +7,7 @@ const ItemListContainer = () => {
 
   const { categoria }=useParams()
 
-  const getDatos = async ()=>{
-    const resp= await fetch('../data.json')
-    const data = await resp.json()
-    return data
-  }
 
-  console.log(getDatos())
 
   const categoriaFiltro= data.filter((dta)=> dta.categoria===categoria)
   
