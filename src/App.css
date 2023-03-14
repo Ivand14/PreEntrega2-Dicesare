@@ -72,15 +72,17 @@
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
-    height: 100vw;
+    height: auto;
+    margin-bottom: 1rem;
 }
 
 .cards{
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
     flex-wrap: wrap;
-    padding: 3rem;
-    gap: 2rem;
+    padding: 2rem;
+    gap: 1rem;
+    height: 27rem;
 }
 
 .boton{
@@ -97,5 +99,19 @@
     color: #000000 !important;
 }
 
+
+
+.containerDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.cardDetail{
+    padding: 2rem;
+}
 
 

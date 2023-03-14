@@ -1,35 +1,26 @@
 import React from 'react'
 import ItemList from './ItemList'
 import data from '../data.json'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
 
-  const getDatos=()=>{
-    return new Promise((resolve, reject) => {
-      if (data.length<0){
-        reject(new Error('No pudimos encontrar productos'))
-      }
+  const { categoria }=useParams()
 
-      setTimeout(() => {
-        resolve(data)
-      }, 2500);
-    })
+  const getDatos = async ()=>{
+    const resp= await fetch('../data.json')
+    const data = await resp.json()
+    return data
   }
 
-  async function fetchingData(){
-    try{
-      const datos= await getDatos();
-    }catch(err){
-      console.log('Error')
-    }
-  }
+  console.log(getDatos())
 
-  fetchingData();
+  const categoriaFiltro= data.filter((dta)=> dta.categoria===categoria)
   
-  console.log(data)
+
   return (
     <div className='contenedor-cards'>
-    <ItemList productos={data}/>
+    {categoria? <ItemList productos={categoriaFiltro}/>  :   <ItemList productos={data}/>}
     </div>
   )
 }

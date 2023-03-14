@@ -1,27 +1,24 @@
 import React from 'react'
 import { Card, Stack, CardBody, CardFooter,Heading,Divider,ButtonGroup,Button,Image,Text, Center, } from '@chakra-ui/react'
+import {Link} from 'react-router-dom'
 
-
-const Item = ({id,name,img,description,stock,precio}) => {
+const Item = ({id,name,img,stock,precio}) => {
   return (
     <>
       <div key={id}>
-      <Card maxW='sm' height={'30rem'} width={'17rem'} boxShadow='dark-lg' p='6' rounded='md' bg='white'>
-        <CardBody display={'flex'} flexDirection={'column'} alignItems={'center'} padding={'.5rem'}>
+      <Card maxW='sm' height={'26em'} width={'17rem'} boxShadow='dark-lg' p='6' rounded='md' bg='white'>
+        <CardBody display={'flex'} flexDirection={'column'} alignItems={'center'} padding={'.5rem'} >
         <Image height={'10rem'} width={'auto'}
           src={img}
           alt={name}
           borderRadius='lg'
         />
-        <Stack mt='3' spacing='2'>
-        <Heading size='md' fontSize='1rem'>{name}</Heading>
-        <Text>
-          {description}
+        <Stack mt='4' spacing='.4' display={'flex'} flexDirection={'column'} alignItems={'start'} width={'100%'}>
+        <Heading size='md' fontSize='1rem'>{name}</Heading >
+        <Text color='blue.600' fontSize='1.1rem'  textAlign={'start'}>
+          PRECIO:{precio}
         </Text>
-        <Text color='blue.600' fontSize='.9rem'>
-          {precio}
-        </Text>
-        <Text color='blue.600' fontSize='.9rem'>
+        <Text color='blue.600' fontSize='1rem' textAlign={'start'}>
           STOCK: {stock}
         </Text>
         </Stack>
@@ -30,10 +27,7 @@ const Item = ({id,name,img,description,stock,precio}) => {
   <CardFooter display={'flex'} alignItems={'center'} justifyContent={'center'} >
     <ButtonGroup spacing='1'>
       <Button variant='solid' colorScheme='blue' className='boton'>
-        Buy now
-      </Button>
-      <Button variant='ghost' colorScheme='blue'>
-        Add to cart
+        <Link to={`/item/${id}`}>VER PRODUCTO</Link>
       </Button>
     </ButtonGroup>
   </CardFooter>

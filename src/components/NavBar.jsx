@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './ItemListContainer';
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
 
@@ -16,27 +16,43 @@ const NavBar = () => {
     <>
      <Navbar bg="" expand="lg">
      <Container>
-        <Navbar.Brand href="#home"><img src="/public/img/roxyam.png" alt="roxyam" className='logo' /></Navbar.Brand>
+        <Navbar.Brand href="#home">
+        <Link to={`/`}>
+          <img src="/public/img/roxyam.png" alt="roxyam" className='logo' />
+        </Link>
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="DRUMSHOP" id="basic-nav-dropdown">
+              <Link to={`/categoria/${'BATERIAS'}`}>
               <NavDropdown.Item href="#action/3.1">BATERIAS</NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'BAQUETAS'}`}>
               <NavDropdown.Item href="#action/3.2">
                 BAQUETAS
               </NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'RESPyACC'}`}>
               <NavDropdown.Item href="#action/3.3">RESPUESTOS Y ACCESORIOS</NavDropdown.Item>
+              </Link>
 
             </NavDropdown>
           </Nav>
 
           <Nav className="me-auto">
             <NavDropdown title="GUITARRAS Y BAJOS" id="basic-nav-dropdown">
+              <Link to={`/categoria/${'GUITARRAS'}`}>
               <NavDropdown.Item href="#action/3.1">GUITARRAS</NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'BAJOS'}`}>
               <NavDropdown.Item href="#action/3.2">
                 BAJOS
               </NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'ACC-GyB'}`}>
               <NavDropdown.Item href="#action/3.3">ACCESORIOS</NavDropdown.Item>
+              </Link>
             </NavDropdown>
           </Nav>
 
