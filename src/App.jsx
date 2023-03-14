@@ -8,7 +8,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import CartWidget from './components/CartWidget'
+
 
 
 

@@ -58,21 +58,33 @@ const NavBar = () => {
 
           <Nav className="me-auto">
             <NavDropdown title="TECLADOS" id="basic-nav-dropdown">
+              <Link to={`/categoria/${'ORGANOS'}`}>
               <NavDropdown.Item href="#action/3.1">ORGANOS</NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'PIANOS'}`}>
               <NavDropdown.Item href="#action/3.2">
                 PIANOS
               </NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'ACC-OyP'}`}>
               <NavDropdown.Item href="#action/3.3">ACCESORIOS</NavDropdown.Item>
+              </Link>
             </NavDropdown>
           </Nav>
 
           <Nav className="me-auto">
             <NavDropdown title="SONIDO" id="basic-nav-dropdown">
+              <Link to={`/categoria/${'MICROFONOS'}`}>
               <NavDropdown.Item href="#action/3.1">MICROFONOS</NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'AURICULARES'}`}>
               <NavDropdown.Item href="#action/3.2">
                 AURICULARES
               </NavDropdown.Item>
+              </Link>
+              <Link to={`/categoria/${'ACC-MyA'}`}>
               <NavDropdown.Item href="#action/3.3">ACCESORIOS</NavDropdown.Item>
+              </Link>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

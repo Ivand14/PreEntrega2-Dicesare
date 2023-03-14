@@ -1,0 +1,30 @@
+[
+    {"id":"01","img":"../public/img/2008251053327122_01_medium.jpg","name":"Guitarra Electrica Legacy Tribute, Black Tinted Gloss","description":"Guitarra Electrica Legacy Tribute","stock":5,"categoria":"GUITARRAS","precio":"150.000$"},
+
+
+    {"id":"02","img":"../public/img/12541_medium.jpg","name":"YAMAHA P125","description":"Piano Digital/Diseño sofisticado/Motor de Sonido Pure CF/88","stock":2,"categoria":"PIANOS","precio":"350.000$"},
+
+
+    {"id":"03","img":"../public/img/18418_medium.jpg","name":"SX SPB62+/VWH","description":"Bajo electrico | Vintage Series | PB | RW | Pickguard Carey","stock":2,"categoria":"BAJOS","precio":"120.000$"},
+
+    
+    {"id":"04","img":"../public/img/1707261614404446_01_medium.jpg","name":"PEARL EXX725SP/C 31","description":"Batería Export, 5 Cpos. 22/10/12/16 14X5,5, Poplar/Mahogany","stock":1,"categoria":"BATERIAS","precio":"300.000$"},
+
+    {"id":"05","img":"../public/img/baquetas.jpg","name":"STAGG SMS1","description":"MAPLE RODS FINOS","stock":10,"categoria":"BAQUETAS","precio":"4.600$"},
+
+    {"id":"06","img":"../public/img/BATacc.jpg","name":"MAPEX MCH912","description":"Soporte para cencerro al aro de bombo - regulable","stock":6,"categoria":"RESPyACC","precio":"9.031$"},
+
+
+    {"id":"07","img":"../public/img/20367_medium.jpg","name":"APOGEE U4","description":"Micrófono profesional Multipropósito para cantantes, locución, animación, karaoke, etc.","stock":9,"categoria":"MICROFONOS","precio":"90.000$"},
+
+    {"id":"09","img":"../public/img/PUAjpg.jpg","name":"JIM DUNLOP 418R 0.88","description":"Puas Tortex Standard X72 Precio x1","stock":29,"categoria":"ACC-GyB","precio":"307$"},
+
+    {"id":"10","img":"../public/img/ORGANO.jpg","name":"CASIO CT-X800","description":"Teclado 61 Teclas Sensitivo","stock":6,"categoria":"ORGANOS","precio":"121.307$"},
+
+    {"id":"11","img":"../public/img/funda.jpg","name":"WARWICK ROCKBAG FUNDA PARA TECLADO 88 TECLAS ","description":"Estuche Semirigido Rc21521 B Para Teclado De 88 Teclas","stock":29,"categoria":"ACC-OyP","precio":"76.500$"},
+
+    {"id":"12","img":"../public/img/auriculare.jpg","name":"BEYERDYNAMIC DT 770 PRO","description":"Auriculares de estudio, sistema cerrado, cable en espiral","stock":9,"categoria":"AURICULARES","precio":"112.542$"},
+
+    {"id":"13","img":"../public/img/ACCMIC.jpg","name":"SAMSON LS2","description":"Soportes (Par) Liviano Para Bafle, Acero, T/Tripode","stock":9,"categoria":"ACC-MyA","precio":"26.334$"}
+    
+]
