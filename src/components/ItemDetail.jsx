@@ -1,77 +1,72 @@
-import React, { useState } from 'react'
-import { Card, Stack, CardBody, CardFooter,Heading,Divider,Button,Image,Text } from '@chakra-ui/react'
+import React, {  useState } from 'react'
+import { Card,  CardBody,Image,Text,CardHeader,Button } from '@chakra-ui/react'
 import { useParams } from 'react-router-dom'
+import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
+
+
+
+
+
+
 
 
 const ItemDetail = ({productos}) => {
+  
+  const [IrAlCart,setIrAlCart]=useState(false)
+
+  const Add=()=>{
+    setIrAlCart(true);
+  }
 
   const{ id } = useParams();
   
-  let [contador,setCount]=useState(0)
-
-  const sumar=()=>{
-    if(contador>=0){
-      setCount(contador+1)
-    }
-  }
-
-  const restar=()=>{
-    if (contador<=0) {
-      setCount(contador=0)
-    }else{
-      setCount(contador-1)
-    }
-  }
-
   const prodFiltrado=productos.filter((producto) => producto.id==id)
   
   return (
-    <div className="cardDetail">
+
+<div className="cardDetail">
+
     {prodFiltrado.map((producto)=>(
-    <div key={producto.id}>
-      <Card maxW='sm'  width={'45rem'} boxShadow='dark-lg' p='6' rounded='md' bg='white' marginBottom={'2rem'}>
-          <CardBody display={'flex'} flexDirection={'column'} alignItems={'center'} padding={'.5rem'} height={'20rem'}>
-          <Image height={'13rem'} width={'auto'}
-            src={producto.img}
-            alt={producto.name}
-            borderRadius='lg'
-          />
-          <Stack mt='3' spacing='2'>
-          <Heading size='md' fontSize='1rem'>{producto.name}</Heading>
-          <Text>
-            {producto.description}
-          </Text>
-          <Text color='blue.600' fontSize='.9rem'>
-            PRECIO: {producto.precio}
-          </Text>
-          <Text color='blue.600' fontSize='.9rem'>
-            STOCK: {producto.stock}
-          </Text>
-          </Stack>
-    </CardBody>
-    <Divider />
-    <CardFooter display={'flex'} alignItems={'center'} justifyContent={'center'} gap={'2rem'} >
-        <Button onClick={restar} color='blue.600' fontSize='1rem' >
-          -
-        </Button>
+    <div key={producto.id} className='contDetail'>
 
-        <Text color='blue.600' fontSize='1.1rem'>
-        {contador}
-        </Text>
+          <Card direction={'row'} alignItems={'center'} boxShadow='dark-lg'>
+            <CardHeader marginRight={'1rem'}>
+              <Image height={'20rem'}
+                src={producto.img}
+              />
+            </CardHeader>
+            <CardBody >
+                <Text pt='2' textAlign={'center'} fontSize={'1.5rem'}>{producto.name}</Text>
+                <Text pt='2'>{producto.description}</Text>
+                <Text pt='2' display={'flex'} alignItems={'center'}  ><span className="material-symbols-outlined">credit_card</span>PAGA EN 3 CUOTAS DE : {Math.round(parseInt(producto.precio)/3)}$</Text>
+                <Text pt='2' display={'flex'} alignItems={'center'}  ><span className="material-symbols-outlined">credit_card</span>PAGA EN 6 CUOTAS DE : {Math.round(parseInt(producto.precio)/6)}$</Text>
+                <Text pt='2' display={'flex'} alignItems={'center'}  ><span className="material-symbols-outlined">credit_card</span>PAGA EN 12 CUOTAS DE : {Math.round(parseInt(producto.precio)/12)}$</Text>
+                <Text pt='2'fontSize={'1.4rem'} color={'darkcyan'}>STOCK : {producto.stock}</Text>
+                <Text marginBottom={6} fontSize={'1.6rem'} color={'darkcyan'}>{producto.precio}</Text>
 
-        <Button onClick={sumar} color='blue.600' fontSize='1rem'>
-          +
-        </Button>
+                <Text>
+                  {IrAlCart ? <Link to={`/cart`}>
+                                <Button colorScheme='facebook' className='btn-cart'>TERMINAR COMPRA</Button>
+                              </Link> : 
+                              <ItemCount Add={Add} id={producto.id} nombre={producto.name}img={producto.img}stock={producto.stock}precio={producto.precio}
+                              />}
 
-        <Button  color='blue.600' fontSize='.9rem' className='boton'>
-          COMPRAR
-        </Button>
-    </CardFooter>
+                </Text>
 
-  </Card>
-      </div>))}
-      
+
+                
+                
+
+            </CardBody>
+          </Card>
+             
+
     </div>
+      
+      ))}
+
+</div>
   )
 }
 

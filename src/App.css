@@ -1,12 +1,11 @@
 .logo{
     height: 7rem;
-    background-color: transparent;
     border: transparent;
     z-index: 1;
 }
 
 .navbar{
-    background-color: #000000;
+    background-color: #6c757d;
 }
 
 .nav-link{
@@ -33,38 +32,33 @@
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: .2rem;
+    gap: 3rem;
 }
 
 .botonMas ,.botonMenos{
-    border: 0.2rem solid thistle;
-    border-radius: 100%;
-    height: 2rem;
+    background-color: #274b7a;
+    color: #fafafa;
+    padding: .5rem;
+    border-radius: .3rem;
 }
 
 .contador{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10rem;
-    border: .1rem solid black;
-    border-radius: 2rem
 }
 
 .agregar{
-    border: solid .1rem #274b7a;
-    border-radius: 1rem;
-    padding: 0 2rem;
-    background: linear-gradient(to left,transparent 50%, rgb(39, 75, 122) 50%);
-    background-size: 201%;
-    background-position: right;
-    transition: ease .6s;
+    border-radius: .6rem;
+    padding: 0.3rem;
+    background:rgb(39, 75, 122) ;
+    transition: all .3s;
+    color: #fafafa;
 }
 
 
 .agregar:hover{
-    background-position: left;
-    color: hwb(0 98% 2%);
+    background:rgb(39, 75, 122) ;
 }
 
 .contenedor-cards{
@@ -110,8 +104,109 @@
     height: auto;
 }
 
-.cardDetail{
-    padding: 2rem;
+
+
+.contDetail{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    margin: 2rem 0;
+    gap: 1rem;
 }
 
 
+.titulo-envios{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0.5rem;
+    background-color: #6c757d;
+}
+
+.contCart{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 10rem;
+}
+
+.contenedor-contador{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.botones{
+    display: flex;
+    gap: .5rem;
+}
+
+.btn-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cartItem{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: #6c757d81;
+    border-radius: 2rem;
+    border: solid 1px #000000;
+}
+
+.imagenCart{
+    height: 5rem;
+}
+
+.imgCart{
+    height: 5rem;
+    background-color: transparent;
+}
+
+.nombreCart,.precioCart,.cantidadCart,subCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eliminarProd{cursor: pointer;}
+
+.contCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 10rem 0;
+}
+
+.textoCart,.emoji{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.mediosDePago{
+    margin: 0 2rem;
+}
+
+.pagos{
+    height: 7rem;
+}
