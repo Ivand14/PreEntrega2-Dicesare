@@ -2,12 +2,12 @@ import { useContext } from "react"
 import { CartContext } from "../context/ShopCart"
 
 
+
 const ItemCart = ({prod}) => {
 
     const{removeProd}=useContext(CartContext);
 
   return (
-
 
     <div className='cartItem' key={prod.id}>
         <div className="imagenCart">

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Card, Stack, CardBody, CardFooter,Heading,Divider,ButtonGroup,Button,Image,Text, Center, } from '@chakra-ui/react'
 import {Link} from 'react-router-dom'
-import CartWidget from './CartWidget'
+
 
 
 const Item = ({id,name,img,stock,precio}) => {

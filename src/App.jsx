@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
@@ -11,7 +11,8 @@ import {
 
 import ShopCart from './context/ShopCart'
 import Cart from './components/Cart'
-
+import Loading from './components/Loading'
+import Factura from './components/Factura'
 
 
 
@@ -23,6 +24,23 @@ import Cart from './components/Cart'
 
 
 const App = () => {
+
+  const[loader,setLoader]=useState(true)
+  
+
+  setTimeout(() => {
+    setLoader(false)
+  }, 2000);
+
+  
+  if(loader){
+    return(
+      <>
+      <Loading />
+      </>
+    )
+  }
+
   return (
 
 <ShopCart>
@@ -40,6 +58,8 @@ const App = () => {
           <Route exact path='/categoria/:categoria' element={<ItemListContainer/>}/>
           <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
           <Route exact path='/cart' element={<Cart/>}/>
+          <Route exact path='/resumen' element={<Factura/>}/>
+          
 
         </Routes>
 

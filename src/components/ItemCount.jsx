@@ -5,7 +5,6 @@ import { CartContext } from '../context/ShopCart'
 
 const ItemCount = ({stock,precio,id,nombre,img,Add}) => {
 
-    console.log(Add)
    const{cart,setCart}=useContext(CartContext); 
    const [count,setCount]=useState(0)
 
@@ -27,6 +26,8 @@ const ItemCount = ({stock,precio,id,nombre,img,Add}) => {
         })
 
     }
+
+    console.log(cart)
 
     const add=()=>{
         setCount(count+1)

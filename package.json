@@ -13,10 +13,13 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "bootstrap": "^5.2.3",
+    "firebase": "^9.18.0",
     "framer-motion": "^10.1.0",
+    "localStorage": "^1.0.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
+    "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.9.0"
   },
   "devDependencies": {
