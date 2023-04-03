@@ -22,10 +22,7 @@ import Footer from './components/Footer'
 
 
 
-
-
 const App = () => {
-
 
   return (
 <div className="app">
@@ -42,8 +39,7 @@ const App = () => {
         <NavBar/>
 
         <Routes>
-
-          
+     
           <Route exact path='/' element={<ItemListContainer/>}/>
           <Route exact path='/categoria/:categoria' element={<ItemListContainer/>}/>
           <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>

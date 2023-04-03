@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 const ItemInicio=()=>{
 return(
     <div className='carrusel'>
-    <Carousel w100>
+    <Carousel>
       <Carousel.Item>
         <img
           className=" imagenCarrusel"
