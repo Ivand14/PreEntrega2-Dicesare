@@ -4,7 +4,7 @@ import { CartContext } from '../context/ShopCart'
 
 const CartWidget = () => {
 
-  const {cart,setCart}=useContext(CartContext);
+  const {cart}=useContext(CartContext);
   const total= cart.reduce((acc,red)=>{
     return acc + red.cantidad;
   },0)

@@ -1,44 +1,42 @@
-import React, { useContext } from "react";
-import { CartContext } from "../context/ShopCart";
-import{Document,Page,View,Text} from "@react-pdf/renderer"
+
 
 const Comprobante = ({ cart,total, CntCuotas, TotalCuotas,CompraId }) => {
   console.log(cart)
   return (
-    <Document>
-      <Page>
-        <View className="ordenDeCompra">
-          <Text>RECIBO DE COMPRA</Text>
-          <Text>
+    <>
+      
+        <div className="ordenDeCompra">
+          <h2>RECIBO DE COMPRA</h2>
+          <h2>
             SU ORDEN DE COMPRA ES :
             <span className="textRecibo">{CompraId}</span>
-          </Text>
+          </h2>
           {cart.map((prod) => (
             <>
-              <Text>
+              <h2>
                 PRODUCTOS COMPRADOS :
                 <span className="textRecibo">{prod.nombre}</span>
-              </Text>
-              <Text>
+              </h2>
+              <h2>
                 CANTIDAD :<span className="textRecibo">{prod.cantidad}</span>
-              </Text>
-              <Text>
+              </h2>
+              <h2>
                 PRECIO :<span className="textRecibo">{prod.precio}$</span>
-              </Text>
+              </h2>
             </>
           ))}
-          <Text>
+          <h2>
             TOTAL : <span className="textRecibo">{total}$</span>
-          </Text>
-          <Text>
+          </h2>
+          <h2>
             CUOTAS :
             <span className="textRecibo">
               {CntCuotas} de {TotalCuotas}$
             </span>
-          </Text>
-        </View>
-      </Page>
-    </Document>
+          </h2>
+        </div>
+
+    </>
   );
 };
 

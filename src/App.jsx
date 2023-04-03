@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+
 import { ChakraProvider } from '@chakra-ui/react'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
@@ -13,7 +13,7 @@ import ShopCart from './context/ShopCart'
 import Cart from './components/Cart'
 import Factura from './components/Factura'
 import Footer from './components/Footer'
-// import ItemInicio from './components/ItemInicio'
+
 
 
 
@@ -43,7 +43,7 @@ const App = () => {
 
         <Routes>
 
-          {/* <Route exact path='/' element={<ItemInicio/>}/> */}
+          
           <Route exact path='/' element={<ItemListContainer/>}/>
           <Route exact path='/categoria/:categoria' element={<ItemListContainer/>}/>
           <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>

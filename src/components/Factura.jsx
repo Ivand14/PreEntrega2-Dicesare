@@ -30,7 +30,6 @@ const Factura = () => {
     const[Titular,setTitular]=useState("")
     const[nroTarjeta,setNroTarjeta]=useState("")
     const[dniTitular,setDniTitular]=useState("")
-    const[direcTitular,setDirecTitular]=useState("")
     const toast = useToast()
 
 
@@ -39,7 +38,7 @@ const Factura = () => {
     };
 
     const nuevoTotal= parseInt(total/cuotas)
-    console.log(cart)
+    
 
     const[loader,setLoader]=useState(true)
     setTimeout(() => {
@@ -77,7 +76,7 @@ const Factura = () => {
       Titular,
       nroTarjeta,
       dniTitular,
-      direcTitular
+      
     };  
 
     const ordersCollection=collection(db,"compras");
@@ -137,10 +136,7 @@ const Factura = () => {
               <input type="number" id='dni' onChange={(e)=>setDniTitular(e.target.value)} />
             </div>
 
-            <div className="datos">
-              <label htmlFor="" id='domicilio'>DIRECCIÓN</label>
-              <input type="text" id='domicilio' className='input' onChange={(e)=>setDirecTitular(e.target.value)} />
-            </div>
+
 
           </div>
 

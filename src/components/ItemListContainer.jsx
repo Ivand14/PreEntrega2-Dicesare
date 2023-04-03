@@ -10,7 +10,7 @@ const ItemListContainer = () => {
   const { categoria }=useParams()
 
   const [instrumentos,setInstrumentos]=useState([])
-  console.log(instrumentos)
+
 
   useEffect(()=>{
     const db=getFirestore();
@@ -45,20 +45,24 @@ const ItemListContainer = () => {
     )
   }
 
-  //ACA SE MUESTRA EL RENDERIZADO SI POR FILTRADO Y LOS PRODUCTOS EN GENERAL.
+
 
   if(categoria){
     return(
       <>
+        <div className="contenedorGral">
         <ItemList productos={categoriaFiltro}/>
+        </div>
       </>
     )
   }else{
     return(
       <>
+        <div className="contenedorGral">
         <ItemInicio/>
         <h1>TODOS NUESTROS PRODUCTOS</h1>
         <ItemList productos={instrumentos}/>
+        </div>
       </>
     )
   }

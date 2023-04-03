@@ -1,12 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Button } from "@chakra-ui/react";
 import { CartContext } from "../context/ShopCart";
-
+import {
+  useToast
+} from '@chakra-ui/react'
 
 
 const ItemCount = ({ stock, precio, id, nombre, img, Add }) => {
   const { cart, setCart } = useContext(CartContext);
   const [count, setCount] = useState(0);
+  const toast = useToast()
 
 
   const addToCart = () => {
@@ -26,7 +29,7 @@ const ItemCount = ({ stock, precio, id, nombre, img, Add }) => {
     });
   };
 
-  console.log(cart);
+  
 
   const add = () => {
     setCount(count + 1);
