@@ -1,6 +1,8 @@
 # E-commerce de instrumentos musicales
 ![FUNCIONAMIENTO DE LA PAGINA](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmM0MzBhOTkxNGY1MjVlYjUxYWNkMGRlNDEzZjM0NjQwYjRmMGU2NCZjdD1n/lwwDbsPAmHOyKRrTbe/giphy.gif)
 
+Este proyecto tiene la finalidad de poder navegar a través de los distintos productos, también ver los detalles de los mismos. Realizar compras y que los datos y productos comprados lleguen a una base de datos
+
 Este proyecto fue realizado con:
  -    ReactJs
 -    ChakraUi
