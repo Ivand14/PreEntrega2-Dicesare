@@ -1,12 +1,38 @@
 import React, { useContext,useState } from 'react'
 import { CartContext } from '../context/ShopCart'
+import Loading from './Loading'
+import {Link} from 'react-router-dom'
+import {getFirestore,addDoc,collection} from 'firebase/firestore';
+import {Button } from '@chakra-ui/react'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  useToast
+} from '@chakra-ui/react'
+
 
 
 const Factura = () => {
-
-    const {cart,total}=useContext(CartContext)
-
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const {cart,total,vaciarCart}=useContext(CartContext)
     const [cuotas, setCuotas] = useState(1);
+    const [nombre,setNombre]=useState("")
+    const [apellido,setApellido]=useState("")
+    const [dni,setDni]=useState("")
+    const [direccion,setDireccion]=useState("")
+    const[compraId,setCompraId]=useState(null);
+    const[Titular,setTitular]=useState("")
+    const[nroTarjeta,setNroTarjeta]=useState("")
+    const[dniTitular,setDniTitular]=useState("")
+    const[direcTitular,setDirecTitular]=useState("")
+    const toast = useToast()
+
 
     const cambioCuotas = (event) => {
       setCuotas(Number(event.target.value));
@@ -15,63 +41,163 @@ const Factura = () => {
     const nuevoTotal= parseInt(total/cuotas)
     console.log(cart)
 
+    const[loader,setLoader]=useState(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 1000);
+  
+    
+    if(loader){
+      return(
+        <>
+        <Loading />
+        </>
+      )
+    }
+
+    const db=getFirestore();
+    const sentForm=(e)=>{
+      e.preventDefault();
+      addDoc(ordersCollection,order).then(({id})=>setCompraId(id));
+    };
+
+    const order={
+      nombre,
+      apellido,
+      dni,
+      direccion,
+      cart:cart.map((prod)=>({
+        id:prod.id,
+        name:prod.nombre,
+        precio:prod.precio,
+        cantidad:prod.cantidad
+      })),
+      Cuotas:cuotas,
+      PrecioPorCuota: nuevoTotal,
+      Titular,
+      nroTarjeta,
+      dniTitular,
+      direcTitular
+    };  
+
+    const ordersCollection=collection(db,"compras");
+
+    
+    
+
   return (
-    <div>
+    
+    
+
+    <div className='contenedorForm'>
+
+      
+    <Link to={`/cart`}>
+        <span className="material-symbols-outlined volver">keyboard_return</span>
+    </Link>
         
-        <form action="" className='form'>
-          <h2 className='textDatos'>DATOS PERSONALES</h2>
+        <form action="" className='form' onSubmit={sentForm}>
           <div className="datosPersonales">
-          <div className="datos">
-            <label htmlFor="" id='name'>NOMBRE</label>
-            <input type="text" id='name' />
+            <h2 className='textDatos'>DATOS PERSONALES</h2>
+            <div className="datos">
+              <label htmlFor="" id='name'>NOMBRE</label>
+              <input type="text" id='name' onChange={(e)=>setNombre(e.target.value)}/>
+            </div>
+
+            <div className="datos">
+              <label htmlFor="" id='apellido'>APELLIDO</label>
+              <input type="text" id='apellido' onChange={(e)=>setApellido(e.target.value)} />
+            </div>
+
+            <div className="datos">
+              <label htmlFor="" id='dni'>DNI:</label>
+              <input type="number" id='dni' onChange={(e)=>setDni(e.target.value)} />
+            </div>
+
+            <div className="datos">
+              <label htmlFor="" id='domicilio'>DIRECCIÓN</label>
+              <input type="text" id='domicilio' onChange={(e)=>setDireccion(e.target.value)} />
+            </div>
           </div>
 
-          <div className="datos">
-            <label htmlFor="" id='apellido'>APELLIDO</label>
-            <input type="text" id='apellido' />
-          </div>
-
-          <div className="datos">
-            <label htmlFor="" id='dni'>DNI:</label>
-            <input type="number" id='dni' />
-          </div>
-
-          <div className="datos">
-            <label htmlFor="" id='domicilio'>DIRECCIÓN</label>
-            <input type="text" id='domicilio' />
-          </div>
-          </div>
-
-          <h2 className='textDatos'>PAGO</h2>
           <div className="datosPersonales">
-          <div className="datos">
-            <label htmlFor="" id='nroTarjeta'>NUMERO DE TARJETA</label>
-            <input type="text" id='nroTarjeta' />
+            <h2 className='textDatos'>PAGO</h2>
+            <div className="datos">
+              <label htmlFor="" id='nroTarjeta'>NUMERO DE TARJETA</label>
+              <input type="text" id='nroTarjeta' onChange={(e)=>setNroTarjeta(e.target.value)} />
+            </div>
+
+            <div className="datos">
+              <label htmlFor="" id='nombreTit'>NOMBRE DEL TITULAR</label>
+              <input type="text" id='nombreTit' onChange={(e)=>setTitular(e.target.value)} />
+            </div>
+
+            <div className="datos">
+              <label htmlFor="" id='dni'>DNI:</label>
+              <input type="number" id='dni' onChange={(e)=>setDniTitular(e.target.value)} />
+            </div>
+
+            <div className="datos">
+              <label htmlFor="" id='domicilio'>DIRECCIÓN</label>
+              <input type="text" id='domicilio' className='input' onChange={(e)=>setDirecTitular(e.target.value)} />
+            </div>
+
           </div>
 
-          <div className="datos">
-            <label htmlFor="" id='nombreTit'>NOMBRE COMPLETO DEL TITULAR</label>
-            <input type="text" id='nombreTit' />
+        <div className="botonContainer">
+          <div className="selecCuotas">
+            <h2>SELECCIONAR CUOTAS:</h2>
+            <select name="cuotas" className='datos' onChange={cambioCuotas} value={cuotas}>
+              <option value={1} selected>1 CUOTA</option>
+              <option value={3} >3 CUOTAS</option>
+              <option value={6} >6 CUOTAS</option>
+              <option value={12} >12 CUOTAS</option>
+            </select>
           </div>
+          <h2 className='textDatos'>TOTAL A PAGAR : {nuevoTotal}$</h2>
+          <Button onClick={onOpen} variant='solid' colorScheme='blue' className='boton' fontFamily='Oswald, sans-serif' type="submit" display={'Flex'} alignContent={'center'} >
+            COMPRAR
+          </Button>
+          <Modal isOpen={isOpen} onClose={onClose}>
 
-          <div className="datos">
-            <label htmlFor="" id='dni'>DNI:</label>
-            <input type="number" id='dni' />
-          </div>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader textAlign={'center'}>ROXYAM</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+              </ModalBody>
+              <document>
+                <div className="ordenDeCompra">
+                  <h2>RECIBO DE COMPRA</h2>
+                <h3>SU ORDEN DE COMPRA ES : <span  className='textRecibo'>{compraId}</span> </h3>
+                {cart.map((prod)=>(
+                  <>                  
+                  <h3>PRODUCTOS COMPRADOS : <span className='textRecibo'>{prod.nombre}</span></h3>
+                  <h3>CANTIDAD : <span className='textRecibo'>{prod.cantidad}</span> </h3>
+                  <h3>PRECIO : <span className='textRecibo'>{prod.precio}$</span></h3>
+                  </>
+                ))}
+                <h3>TOTAL : <span className='textRecibo'>{total}$</span></h3>
+                <h3>CUOTAS : <span className='textRecibo'>{cuotas} de {nuevoTotal}$</span> </h3>
+                </div>
+              </document>
+              <ModalFooter>
+                <Link to={`/`}>
+                <Button 
+                onClick={() =>{
+                  toast({
+                    title: 'COMPRA REALIZADA.',
+                    description: "GRACIAS POR CONFIAR EN NOSTROS.",
+                    status: 'success',
+                    duration: 1500,
+                    isClosable: true,
+                  });vaciarCart();}}>OK</Button>
+                </Link>
+              </ModalFooter>
+            </ModalContent>
 
-          <div className="datos">
-            <label htmlFor="" id='domicilio'>DIRECCIÓN</label>
-            <input type="text" id='domicilio' className='input' />
-          </div>
-
-          <select name="cuotas" className='datos' onChange={cambioCuotas} value={cuotas}>
-            <option value={1} selected>1 CUOTA</option>
-            <option value={3} >3 CUOTAS</option>
-            <option value={6} >6 CUOTAS</option>
-            <option value={12} >12 CUOTAS</option>
-          </select>
-          </div>
-        <h2 className='textDatos'>TOTAL A PAGAR : {nuevoTotal}$</h2>
+          </Modal>
+        </div>
         </form>
         
         

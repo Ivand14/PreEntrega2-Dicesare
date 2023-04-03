@@ -1,3 +1,44 @@
+body h1{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+}
+
+.me-auto{
+    font-family: 'Oswald', sans-serif;
+}
+
+.carrusel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600vh;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.imagenCarrusel{
+    width: 400vh;
+    height: 40rem;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-evenly;
+    margin: .5rem 0;
+}
+
+.banner img{
+    height: 3rem;
+    background-color: transparent;
+}
+
 .logo{
     height: 7rem;
     border: transparent;
@@ -5,7 +46,7 @@
 }
 
 .navbar{
-    background-color: #6c757d;
+    background-color: #3b3f44;
 }
 
 .nav-link{
@@ -66,7 +107,7 @@
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
-    height: auto;
+    height: 100%;
     margin-bottom: 1rem;
 }
 
@@ -76,7 +117,7 @@
     flex-wrap: wrap;
     padding: 2rem;
     gap: 1rem;
-    height: 27rem;
+    height: 100%;
 }
 
 .boton{
@@ -121,7 +162,9 @@
     justify-content:center;
     align-items:center;
     padding:0.5rem;
-    background-color: #6c757d;
+    background-color: #3b3f44;
+    color: #fafafa;
+    gap: .5rem;
 }
 
 .contCart{
@@ -184,6 +227,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family:'Oswald, sans-serif'
 }
 
 .eliminarProd{cursor: pointer;}
@@ -225,6 +269,7 @@
 
 .Total{
     display: flex;
+    font-family: 'Oswald, sans-serif'
 }
 
 .textTotal{
@@ -249,19 +294,23 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #6c757d7e;
+    
 }
 
+
+
 .form{
-    border: solid 2px #274b7a;
-    margin: 1rem 10rem;
-    border-radius: 2rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
 }
+
 
 .textDatos{
     text-align: center;
     font-size: 2rem;
     padding: 1rem;
+    font-family:'Oswald, sans-serif';
 }
 
 .datosPersonales{
@@ -273,6 +322,7 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
+    font-family:'Oswald, sans-serif';
 }
 
 .datos{
@@ -282,7 +332,85 @@
     justify-content: space-around;
 }
 
+.selecCuotas{
+    display: flex;
+    align-items: center;
+}
+
 input{
     border: solid 2px #274b7a;
     border-radius: .5rem;
+    text-align: center;
+}
+
+.dropdown-item{
+    color:#000000 !important;
+}
+
+.logo-tienda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #3b3f44;
+}
+
+.logo-tienda img{
+    height: 5rem;
+}
+
+.logo-tienda h2{
+    font-family: 'Delicious Handrawn', cursive;
+    color: antiquewhite;
+}
+
+.icons{
+    display: flex;
+    gap: 1rem;
+    height: 2rem;
+}
+
+.datos-tienda{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 1rem;
+}
+
+.datos-tienda,.contacto-datos p{
+    color: antiquewhite;
+}
+
+.text-principal{
+    border-bottom:solid 1px #6c757d;
+    text-align: center;
+    font-family: 'Alkatra', cursive;
+    color: antiquewhite;
+}
+
+.botonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.ordenDeCompra h2{
+    text-align: center;
+}
+
+.ordenDeCompra h3{
+    text-align: start;
+    padding: .5rem;
+    font-weight: 700;
+}
+
+.textRecibo{
+    font-weight: 500;
 }

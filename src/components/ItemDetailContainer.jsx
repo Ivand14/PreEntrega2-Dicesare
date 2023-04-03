@@ -6,30 +6,31 @@ import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
 
-  const {id}=useParams();
-  const[productos,setProductos]=useState([])
-  
+  const { id }=useParams();
+  const [productos,setProductos]=useState([]);
 
   useEffect(()=>{
+    const getProducto=async()=>{
+      const db=getFirestore();
+      const onlyItem=doc(db,"instrumentos",id)
+      const response=await getDoc(onlyItem)
 
-    const db=getFirestore();
+      const newItem={
+        id:response.id,
+        ...response.data()
+      }
 
-    const onlyItem= doc(db,'instrumentos',`${id}`);
-    getDoc(onlyItem)
-      .then((snapshot)=>{
-        if(snapshot.exists()){
-          setProductos({id:snapshot,...snapshot.data()})
-        }
-      })
-  },[`${id}`])
+      setProductos(newItem);
+    }
+    getProducto();
+  },[id]);
 
-  console.log(productos)
+  
 
   return (
     <div className='containerDetail'>
       <ItemDetail 
-        producto={productos}      
-      
+      productos={productos}
       />
     </div>
   )

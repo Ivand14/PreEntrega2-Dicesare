@@ -11,8 +11,9 @@ import {
 
 import ShopCart from './context/ShopCart'
 import Cart from './components/Cart'
-import Loading from './components/Loading'
 import Factura from './components/Factura'
+import Footer from './components/Footer'
+// import ItemInicio from './components/ItemInicio'
 
 
 
@@ -25,23 +26,9 @@ import Factura from './components/Factura'
 
 const App = () => {
 
-  const[loader,setLoader]=useState(true)
-  
-
-  setTimeout(() => {
-    setLoader(false)
-  }, 2000);
-
-  
-  if(loader){
-    return(
-      <>
-      <Loading />
-      </>
-    )
-  }
 
   return (
+<div className="app">
 
 <ShopCart>
 
@@ -51,9 +38,12 @@ const App = () => {
     <BrowserRouter className='container-cards'>
 
       <ChakraProvider>
+
         <NavBar/>
 
         <Routes>
+
+          {/* <Route exact path='/' element={<ItemInicio/>}/> */}
           <Route exact path='/' element={<ItemListContainer/>}/>
           <Route exact path='/categoria/:categoria' element={<ItemListContainer/>}/>
           <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
@@ -63,11 +53,15 @@ const App = () => {
 
         </Routes>
 
+
+        <Footer/>
+        
       </ChakraProvider>
 
     </BrowserRouter>
 
 </ShopCart>
+</div>
   )
 }
 

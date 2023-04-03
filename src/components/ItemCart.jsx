@@ -13,7 +13,7 @@ const ItemCart = ({prod}) => {
         <div className="imagenCart">
             <img src={prod.img} alt="" className="imgCart"/>
         </div>
-        <div className="nombreCart">
+        <div className="nombreCart" >
             <h2>Nombre:</h2>
             <h2>{prod.nombre}</h2>
         </div>

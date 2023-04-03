@@ -18,12 +18,14 @@ const NavBar = () => {
      <Navbar bg="grey" expand="lg">
      <Container>
         <Navbar.Brand href="home">
-        <Link to={`/`}>
-          <img src="/public/img/klipartz.com.png" alt="roxyam" className='logo' />
-        </Link>
-          </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Link to={`/`}>
+            <img src="/public/img/klipartz.com.png" alt="roxyam" className='logo' />
+          </Link>
+        </Navbar.Brand>
+
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+
           <Nav className="me-auto" >
             <NavDropdown title="DRUMSHOP" id="basic-nav-dropdown">
               <Link to={`/categoria/${'BATERIAS'}`}>

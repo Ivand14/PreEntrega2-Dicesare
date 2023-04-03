@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import { CartContext } from '../context/ShopCart'
 import { Link } from 'react-router-dom';
 import ItemCart from './ItemCart';
 import { Button } from '@chakra-ui/react'
+import Loading from './Loading'
 
 const Cart = () => {
 
@@ -21,6 +22,21 @@ const Cart = () => {
         )
     }
 
+    const[loader,setLoader]=useState(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 1000);
+  
+    
+    if(loader){
+      return(
+        <>
+        <Loading />
+        </>
+      )
+    }
+    
+
     return (
         <>
                 <Link to={`/`}>
@@ -31,18 +47,18 @@ const Cart = () => {
                 <div className="resumenCompra">
 
                 <div className="BtnVaciar">
-                <Button colorScheme='facebook' className='btn-cart' onClick={vaciarCart}>VACIAR CARRITO</Button>
+                <Button colorScheme='facebook' className='btn-cart' onClick={vaciarCart} fontFamily='Oswald, sans-serif'>VACIAR CARRITO</Button>
                 </div>
 
                 <div className="Total">
-                    <h2 className='textTotal'>TOTAL:</h2>
-                    <h2 className='numberTotal'>{total}$</h2>
+                    <h2 className='textTotal' >TOTAL:</h2>
+                    <h2 className='numberTotal' >{total}$</h2>
                 </div>
 
 
                 <div className="BtnTotal">
                 <Link to={`/resumen`}>
-                <Button colorScheme='facebook' className='btn-cart'>COMPRAR</Button>
+                <Button colorScheme='facebook' className='btn-cart'fontFamily='Oswald, sans-serif'>COMPRAR</Button>
                 </Link>
                 </div>
 
