@@ -3,7 +3,6 @@ import {collection, getDocs, getFirestore} from 'firebase/firestore'
 
 import ItemInicio from './ItemInicio'
 import ItemList from './ItemList'
-import Loading from './Loading'
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
@@ -32,19 +31,9 @@ const ItemListContainer = () => {
 
   const categoriaFiltro= instrumentos.filter((dta)=> dta.categoria===categoria)
   
-  const[loader,setLoader]=useState(true)
-  setTimeout(() => {
-    setLoader(false)
-  }, 1000);
-
   
-  if(loader){
-    return(
-
-      <Loading/>
-
-    )
-  }
+  
+ 
 
 
 
