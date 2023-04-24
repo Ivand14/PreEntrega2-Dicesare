@@ -1,9 +1,10 @@
-import React, { useState,useEffect} from 'react'
-import ItemList from './ItemList'
+import React, { useEffect, useState } from 'react'
+import {collection, getDocs, getFirestore} from 'firebase/firestore'
+
 import ItemInicio from './ItemInicio'
-import { useParams } from 'react-router-dom'
-import {collection,getDocs,getFirestore} from 'firebase/firestore'
+import ItemList from './ItemList'
 import Loading from './Loading'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
 
@@ -40,7 +41,7 @@ const ItemListContainer = () => {
   if(loader){
     return(
       <>
-      <Loading />
+      <Loading/>
       </>
     )
   }
