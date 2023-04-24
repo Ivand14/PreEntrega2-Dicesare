@@ -15,7 +15,6 @@ import {addDoc, collection, getFirestore} from 'firebase/firestore';
 import {Button} from '@chakra-ui/react'
 import { CartContext } from '../context/ShopCart'
 import {Link} from 'react-router-dom'
-import Loading from './Loading'
 
 const Factura = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
