@@ -4,7 +4,6 @@ import {useContext, useState} from 'react'
 import { CartContext } from "../context/ShopCart";
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
-import Loading from './Loading'
 
 const ItemDetail = ({productos}) => {
 
@@ -27,20 +26,6 @@ const ItemDetail = ({productos}) => {
     setIrAlCart(true);
   }
 
-  setTimeout(() => {
-    setLoader(false)
-  }, 1000);
-
-
-
-  
-  if(loader){
-    return(
-      <>
-      <Loading />
-      </>
-    )
-  }
 
 
 
