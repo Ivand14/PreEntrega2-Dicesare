@@ -39,19 +39,6 @@ const Factura = () => {
     const nuevoTotal= parseInt(total/cuotas)
     
 
-    const[loader,setLoader]=useState(true)
-    setTimeout(() => {
-      setLoader(false)
-    }, 1000);
-  
-    
-    if(loader){
-      return(
-        <>
-        <Loading />
-        </>
-      )
-    }
 
     const db=getFirestore();
     const sentForm=(e)=>{
