@@ -40,9 +40,9 @@ const ItemListContainer = () => {
   
   if(loader){
     return(
-      <>
+
       <Loading/>
-      </>
+
     )
   }
 

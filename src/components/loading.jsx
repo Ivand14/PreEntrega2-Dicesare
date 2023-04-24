@@ -1,10 +1,7 @@
-import React from 'react'
 import { InfinitySpin } from  'react-loader-spinner'
-
+import React from 'react'
 
 const Loading = () => {
-  
-  
 
   return (
     <div className='contSpinner'>
