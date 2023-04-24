@@ -52,8 +52,11 @@ body h1{
 }
 
 .nav-link{
-    color: #fafafa !important;
+    color: #000 !important;
+    padding:1rem;
 }
+
+
 
 .navbar-toggler-icon{
     filter: invert(1);

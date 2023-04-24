@@ -1,13 +1,15 @@
 import React, { createContext, useState } from 'react'
+
 export const CartContext=createContext();
 
 
 
 const ShopCart = ({children}) => {
 
-  const [cart,setCart]=useState([])
+  const [cart,setCart]=useState([]);
+  const [count, setCount] = useState(0);
 
-
+  
 
   const cartLS=JSON.stringify(cart)
   localStorage.setItem('cart',cartLS)
@@ -29,7 +31,7 @@ const ShopCart = ({children}) => {
 
   return(
     
-  <CartContext.Provider value={{cart,setCart,removeProd,total,vaciarCart}}>{children}</CartContext.Provider>
+  <CartContext.Provider value={{cart,setCart,removeProd,total,vaciarCart,count,setCount}}>{children}</CartContext.Provider>
     
   ) 
     

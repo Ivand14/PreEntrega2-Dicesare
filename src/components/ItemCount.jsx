@@ -1,16 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+
 import { Button } from "@chakra-ui/react";
 import { CartContext } from "../context/ShopCart";
 import {
   useToast
 } from '@chakra-ui/react'
 
-
-const ItemCount = ({ stock, precio, id, nombre, img, Add }) => {
-  const { cart, setCart } = useContext(CartContext);
-  const [count, setCount] = useState(0);
-  const toast = useToast()
-
+const ItemCount = ({ stock, precio, id, nombre, img, Add,stockOriginal }) => {
+  
+  const { cart, setCart,count,setCount } = useContext(CartContext);
+  const toast = useToast();
 
   const addToCart = () => {
     setCart((items) => {
@@ -27,17 +26,20 @@ const ItemCount = ({ stock, precio, id, nombre, img, Add }) => {
         return [...items, { id, nombre, precio, cantidad: count, img }];
       }
     });
+    
+    
   };
-
   
-
+  
   const add = () => {
     setCount(count + 1);
   };
 
+
   const rest = () => {
     setCount(count - 1);
   };
+
 
   return (
     <div className="contenedor-contador">
@@ -63,7 +65,7 @@ const ItemCount = ({ stock, precio, id, nombre, img, Add }) => {
         </div>
 
         <div className="btnAgregar">
-          {count <= 0 ? (
+          {stock < count  ? (
             <Button colorScheme="blackAlpha" fontFamily="Oswald, sans-serif">
               AGREGUE UN PRODUCTO
             </Button>
