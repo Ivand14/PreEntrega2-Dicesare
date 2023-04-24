@@ -1,13 +1,15 @@
-import React, { useContext,useState } from 'react'
-import { CartContext } from '../context/ShopCart'
-import { Link } from 'react-router-dom';
-import ItemCart from './ItemCart';
+import React, { useContext, useState } from 'react'
+
 import { Button } from '@chakra-ui/react'
+import { CartContext } from '../context/ShopCart'
+import ItemCart from './ItemCart';
+import { Link } from 'react-router-dom';
 import Loading from './Loading'
 
 const Cart = () => {
 
     const {cart,total,vaciarCart}=useContext(CartContext);   
+    const[loader,setLoader]=useState(true)
 
     
     if(cart.length === 0) {
@@ -22,7 +24,7 @@ const Cart = () => {
         )
     }
 
-    const[loader,setLoader]=useState(true)
+    
     setTimeout(() => {
       setLoader(false)
     }, 1000);
