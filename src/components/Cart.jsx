@@ -26,17 +26,17 @@ const Cart = () => {
 
     
     setTimeout(() => {
+      if(loader){
+        return(
+          <>
+          <Loading />
+          </>
+        )
+      }
       setLoader(false)
     }, 1000);
   
     
-    if(loader){
-      return(
-        <>
-        <Loading />
-        </>
-      )
-    }
     
 
     return (
