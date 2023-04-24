@@ -4,7 +4,6 @@ import { Button } from '@chakra-ui/react'
 import { CartContext } from '../context/ShopCart'
 import ItemCart from './ItemCart';
 import { Link } from 'react-router-dom';
-import Loading from './Loading'
 
 const Cart = () => {
 
@@ -25,16 +24,7 @@ const Cart = () => {
     }
 
     
-    setTimeout(() => {
-      if(loader){
-        return(
-          <>
-          <Loading />
-          </>
-        )
-      }
-      setLoader(false)
-    }, 1000);
+
   
     
     
