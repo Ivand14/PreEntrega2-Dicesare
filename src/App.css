@@ -57,12 +57,15 @@ body h1{
 }
 
 .LinkNav{
-    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
+    transition: all .4s;
 }
 
 .LinkNav:hover{
     color: #000;
+    background-color: #3b3f4496;
 }
 
 .navbar-toggler-icon{
