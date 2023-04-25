@@ -26,9 +26,9 @@ const NavBar = () => {
 
           <Nav className="me-auto" >
             <NavDropdown title="DRUMSHOP" id="basic-nav-dropdown">
-                <Nav.Link to={`/categoria/${'BATERIAS'}`}>
+                <Link to={`/categoria/${'BATERIAS'}`}>
                   BATERIAS
-                </Nav.Link>
+                </Link>
                 <Nav.Link href={`/categoria/${'BAQUETAS'}`}>
                   BAQUETAS
                 </Nav.Link>
