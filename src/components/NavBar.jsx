@@ -26,15 +26,15 @@ const NavBar = () => {
 
           <Nav className="me-auto" >
             <NavDropdown title="DRUMSHOP" id="basic-nav-dropdown">
-                <Link to={`/categoria/${'BATERIAS'}`}>
+                <Link to={`/categoria/${'BATERIAS'}`} className='LinkNav'>
                   BATERIAS
                 </Link>
-                <Nav.Link href={`/categoria/${'BAQUETAS'}`}>
+                <Link to={`/categoria/${'BAQUETAS'}`} className='LinkNav'>
                   BAQUETAS
-                </Nav.Link>
-                <Nav.Link href={`/categoria/${'RESPyACC'}`}>
+                </Link>
+                <Link to={`/categoria/${'RESPyACC'}`} className='LinkNav'>
                   RESPUESTOS Y ACCESORIOS
-                </Nav.Link>
+                </Link>
 
             </NavDropdown>
           </Nav>
@@ -42,44 +42,44 @@ const NavBar = () => {
           <Nav className="me-auto">
             <NavDropdown title="GUITARRAS Y BAJOS" id="basic-nav-dropdown">
               
-                <Nav.Link href={`/categoria/${'GUITARRAS'}`}>
+                <Link to={`/categoria/${'GUITARRAS'}`} className='LinkNav'>
                   GUITARRAS
-                </Nav.Link>
-                <Nav.Link href={`/categoria/${'BAJOS'}`}>
+                </Link>
+                <Link to={`/categoria/${'BAJOS'}`} className='LinkNav'>
                   BAJOS
-                </Nav.Link>
-                <Nav.Link href={`/categoria/${'ACC-GyB'}`}>
+                </Link>
+                <Link to={`/categoria/${'ACC-GyB'}`}  className='LinkNav'>
                   ACCESORIOS
-                </Nav.Link>
+                </Link>
                 
             </NavDropdown>
           </Nav>
 
           <Nav className="me-auto">
             <NavDropdown title="TECLADOS" id="basic-nav-dropdown">
-                <Nav.Link href={`/categoria/${'ORGANOS'}`}>
+                <Link to={`/categoria/${'ORGANOS'}`} className='LinkNav'>
                   ORGANOS
-                </Nav.Link>
-                <Nav.Link href={`/categoria/${'PIANOS'}`}>
+                </Link>
+                <Link to={`/categoria/${'PIANOS'}`} className='LinkNav'>
                   PIANOS
-                </Nav.Link>
-                <Nav.Link href={`/categoria/${'ACC-OyP'}`}>
+                </Link>
+                <Link to={`/categoria/${'ACC-OyP'}`} className='LinkNav'>
                   ACCESORIOS
-                </Nav.Link>
+                </Link>
             </NavDropdown>
           </Nav>
 
           <Nav className="me-auto">
             <NavDropdown title="SONIDO" id="basic-nav-dropdown">
-                <Nav.Link href={`/categoria/${'MICROFONOS'}`}>
+                <Link to={`/categoria/${'MICROFONOS'}`} className='LinkNav'>
                   MICROFONOS
-                </Nav.Link>
-                <Nav.Link href={`/categoria/${'AURICULARES'}`}>
+                </Link>
+                <Link to={`/categoria/${'AURICULARES'}`} className='LinkNav'>
                   AURICULARES
-                </Nav.Link>
-                <Nav.Link href={`/categoria/${'ACC-MyA'}`}>
+                </Link>
+                <Link to={`/categoria/${'ACC-MyA'}`} className='LinkNav'>
                   ACCESORIOS
-                </Nav.Link>
+                </Link>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

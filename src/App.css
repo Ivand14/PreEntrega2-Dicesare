@@ -56,7 +56,14 @@ body h1{
     padding:1rem;
 }
 
+.LinkNav{
+    margin: 0 2rem;
+    padding: 1rem;
+}
 
+.LinkNav:hover{
+    color: #000;
+}
 
 .navbar-toggler-icon{
     filter: invert(1);
