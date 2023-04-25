@@ -1,11 +1,10 @@
 import React from 'react'
 
-
 const Footer = () => {
   return (
     <div className='footer'>
         <div className="logo-tienda">
-            <img src="/public/img/klipartz.com.png" alt="klipartz" />
+            <img src="/img/klipartz.com.png" alt="klipartz" />
             <h2>ROXAYAM TIENDA DE INSTRUMENTOS MUSICALES</h2>
             <div className="icons">
             <i className="bi bi-instagram"></i>

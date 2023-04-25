@@ -19,7 +19,7 @@ const NavBar = () => {
      <Navbar  expand="lg">
      <Container>
           <Link to={`/`}>
-            <img src="/public/img/klipartz.com.png" alt="roxyam" className='logo' />
+            <img src="/img/klipartz.com.png" alt="roxyam" className='logo' />
           </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

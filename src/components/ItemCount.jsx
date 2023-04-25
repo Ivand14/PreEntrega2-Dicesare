@@ -91,7 +91,7 @@ const ItemCount = ({ stock, precio, id, nombre, img, Add,stockOriginal }) => {
       </div>
       <div className="mediosDePago">
         <img
-          src="/public/img/mediosdepago.png"
+          src="/img/mediosdepago.png"
           alt="cpTarjetas"
           className="pagos"
         />

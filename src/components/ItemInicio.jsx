@@ -7,7 +7,7 @@ return(
       <Carousel.Item>
         <img
           className=" imagenCarrusel"
-          src="/public/img/maxresdefault.jpg"
+          src="/img/maxresdefault.jpg"
           alt="First slide"
         />
         
@@ -15,7 +15,7 @@ return(
       <Carousel.Item>
         <img
           className=" imagenCarrusel"
-          src="/public/img/Header_Musical_Instruments_ogp_db908ae027e29317f45d72030a23291c.webp"
+          src="/img/Header_Musical_Instruments_ogp_db908ae027e29317f45d72030a23291c.webp"
           alt="Second slide"
         />
 
@@ -24,7 +24,7 @@ return(
       <Carousel.Item>
         <img
           className=" imagenCarrusel"
-          src="/public/img/av2-shop-card-v3@2x.jpg"
+          src="/img/av2-shop-card-v3@2x.jpg"
           alt="Third slide"
         />
 
@@ -33,10 +33,10 @@ return(
     </Carousel>
 
     <div className="banner">
-      <img src="/public/img/yamaha.jpg" alt="" />
-      <img src="/public/img/fender.png" alt="" />
-      <img src="/public/img/Pearl_drum_logo.png" alt="" />
-      <img src="/public/img/casio.png" alt="" />
+      <img src="/img/yamaha.jpg" alt="" />
+      <img src="/img/fender.png" alt="" />
+      <img src="/img/Pearl_drum_logo.png" alt="" />
+      <img src="/img/casio.png" alt="" />
     </div>
     </div>
 
