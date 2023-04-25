@@ -27,3 +27,4 @@ Los componentes que se utilizaron fueron:
 - Footer:Contiene datos de la tienda.
 
 
+Deploy de la aplicacion : https://proyecto-final-dicesare-4u3t.vercel.app/
